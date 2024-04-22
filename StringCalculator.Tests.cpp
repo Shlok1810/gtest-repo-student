@@ -1,16 +1,5 @@
 #include "StringCalculator.h"
 #include <gtest/gtest.h>
-
-TEST(StringCalculatorTestSuite,GivenEmptyStringZeroIsExpected){
-    //Arrange
-    StringCalculator objUnderTest;
-    string input="";
-    int expectedValue=0;
-    //Act
-   int actualValue=  objUnderTest.Add(input);
-    //Assert
-    EXPECT_EQ(actualValue,expectedValue);
-}
 TEST(StringCalculatorTestSuite,GivenEmptyStringZeroIsExpected){
     //Arrangee
     StringCalculator objUnderTest;
@@ -19,7 +8,7 @@ TEST(StringCalculatorTestSuite,GivenEmptyStringZeroIsExpected){
     //Act
    int actualValue=  objUnderTest.Add(input);
     //Assert
-    EXPECT_EQ(actualValue,expectedValue);
+    ASSERT_EQ(actualValue,expectedValue);
 }
  
 TEST(StringCalculatorTestSuite,Given2numbers){
@@ -30,7 +19,7 @@ TEST(StringCalculatorTestSuite,Given2numbers){
     //Act
    int actualValue=  objUnderTest.Add(input);
     //Assert
-    EXPECT_EQ(actualValue,expectedValue);
+    ASSERT_EQ(actualValue,expectedValue);
 }
 TEST(StringCalculatorTestSuite,when_passed_multiple_comma_delimited_numbers){
     //Arrangee
@@ -40,7 +29,7 @@ TEST(StringCalculatorTestSuite,when_passed_multiple_comma_delimited_numbers){
     //Act
    int actualValue=  objUnderTest.Add(input);
     //Assert
-    EXPECT_EQ(actualValue,expectedValue);
+    ASSERT_EQ(actualValue,expectedValue);
 }
 TEST(StringCalculatorTestSuite,when_delimited_with_newline_and_comma){
     //Arrangee
@@ -50,7 +39,7 @@ TEST(StringCalculatorTestSuite,when_delimited_with_newline_and_comma){
     //Act
    int actualValue=  objUnderTest.Add(input);
     //Assert
-    EXPECT_EQ(actualValue,expectedValue);
+    ASSERT_EQ(actualValue,expectedValue);
 }
 TEST(StringCalculatorTestSuite,when_passed_a_delimiter){
     //Arrangee
@@ -60,7 +49,7 @@ TEST(StringCalculatorTestSuite,when_passed_a_delimiter){
     //Act
    int actualValue=  objUnderTest.Add(input);
     //Assert
-    EXPECT_EQ(actualValue,expectedValue);
+    ASSERT_EQ(actualValue,expectedValue);
 }
 TEST(StringCalculatorTestSuite,when_passed_negative_numbers){
     //Arrangee
@@ -69,7 +58,7 @@ TEST(StringCalculatorTestSuite,when_passed_negative_numbers){
     int expectedValue=3;
     //Act
     //Assert
-    ASSERT_ALL_EQ(objUnderTest.Add(input));
+    ASSERT_ANY_THROW(objUnderTest.Add(input));
 }
 TEST(StringCalculatorTestSuite,when_passed_negative_numbers1){
     //Arrangee
@@ -78,7 +67,7 @@ TEST(StringCalculatorTestSuite,when_passed_negative_numbers1){
     int expectedValue=3;
     //Act
     //Assert
-    ASSERT_EQ(objUnderTest.Add(input),invalid_argument);
+    ASSERT_THROW(objUnderTest.Add(input),invalid_argument);
 }
 TEST(StringCalculatorTestSuite,when_passed_numbers_over_1000){
     //Arrangee
@@ -88,7 +77,7 @@ TEST(StringCalculatorTestSuite,when_passed_numbers_over_1000){
     //Act
    int actualValue=  objUnderTest.Add(input);
     //Assert
-    EXPECT_EQ(actualValue,expectedValue);
+    ASSERT_EQ(actualValue,expectedValue);
 }
 TEST(StringCalculatorTestSuite,when_passed_multicharacter_delimiter){
     //Arrangee
@@ -98,7 +87,7 @@ TEST(StringCalculatorTestSuite,when_passed_multicharacter_delimiter){
     //Act
    int actualValue=  objUnderTest.Add(input);
     //Assert
-    EXPECT_EQ(actualValue,expectedValue);
+    ASSERT_EQ(actualValue,expectedValue);
 }
 TEST(StringCalculatorTestSuite,when_passed_multiple_delimiters){
     //Arrangee
@@ -108,7 +97,7 @@ TEST(StringCalculatorTestSuite,when_passed_multiple_delimiters){
     //Act
    int actualValue=  objUnderTest.Add(input);
     //Assert
-    EXPECT_EQ(actualValue,expectedValue);
+    ASSERT_EQ(actualValue,expectedValue);
 }
 TEST(StringCalculatorTestSuite,when_passed_multiple_multicharacter_delimiters){
     //Arrangee
@@ -118,7 +107,8 @@ TEST(StringCalculatorTestSuite,when_passed_multiple_multicharacter_delimiters){
     //Act
    int actualValue=  objUnderTest.Add(input);
     //Assert
-    EXPECT_EQ(actualValue,expectedValue);
+    ASSERT_EQ(actualValue,expectedValue);
+}
 }
 
 
