@@ -109,6 +109,3 @@ TEST(StringCalculatorTestSuite,when_passed_multiple_multicharacter_delimiters){
     //Assert
     ASSERT_EQ(actualValue,expectedValue);
 }
-}
-
-
