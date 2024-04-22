@@ -69,7 +69,7 @@ TEST(StringCalculatorTestSuite,when_passed_negative_numbers){
     int expectedValue=3;
     //Act
     //Assert
-    EXPECT_EQ(objUnderTest.Add(input));
+    ASSERT_ALL_EQ(objUnderTest.Add(input));
 }
 TEST(StringCalculatorTestSuite,when_passed_negative_numbers1){
     //Arrangee
@@ -78,7 +78,7 @@ TEST(StringCalculatorTestSuite,when_passed_negative_numbers1){
     int expectedValue=3;
     //Act
     //Assert
-    EXPECT_EQ(objUnderTest.Add(input),invalid_argument);
+    ASSERT_EQ(objUnderTest.Add(input),invalid_argument);
 }
 TEST(StringCalculatorTestSuite,when_passed_numbers_over_1000){
     //Arrangee
